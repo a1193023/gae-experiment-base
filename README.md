@@ -77,13 +77,24 @@ Base experiment code for web experiments hosted on Google App Engine For Python 
 
 ### How to download data from the webpage:
 
+If you run a mac or linux machine:
 enter this at the command line:  
+
+```
+appcfg.py download_data --config_file=bulkloader.yaml --filename=<app_name>.csv --kind=DataObject --url=http://<app_name>.appspot.com/_ah/remote_api
+```
+If you run a Windows machine:
+
+1. Download a unix emulater such as Cygwin. [here](https://www.cygwin.com/)
+2. When installing, make sure Python is a selected app.
+3. Run this code in your Cygwin command line (after navigating to the same directory as your experiment code)
 
 ```
 appcfg.py download_data --config_file=bulkloader.yaml --filename=<app_name>.csv --kind=DataObject --url=http://<app_name>.appspot.com/_ah/remote_api
 ```
 
 Note: The local testing in Google App Engine currently doesn't support batch download
+
 
 
 #### If you change the data being written:
